@@ -5,9 +5,9 @@
 [ext_resource path="res://Assets/treeBrown_large.png" type="Texture" id=3]
 [ext_resource path="res://Assets/crateMetal.png" type="Texture" id=4]
 [ext_resource path="res://Assets/crateWood.png" type="Texture" id=5]
-[ext_resource path="res://Singletons/fan2.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Singletons/fan1.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Singletons/fan3.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Rescources/fans/fan2.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Rescources/fans/fan1.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Rescources/fans/fan3.tscn" type="PackedScene" id=8]
 
 [sub_resource type="TileSet" id=1]
 0/name = "terrainTiles_default.png 0"
@@ -154,10 +154,10 @@ tile_data = PoolIntArray( -131072, 0, 0, -131052, 0, 0, -65536, 0, 0, -65517, 0,
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="fan1" parent="Node2D" instance=ExtResource( 7 )]
-position = Vector2( 690, 348 )
+position = Vector2( 294, 213 )
 
 [node name="fan2" parent="Node2D" instance=ExtResource( 6 )]
-position = Vector2( 479, 370 )
+position = Vector2( 134, 163 )
 
 [node name="fan3" parent="Node2D" instance=ExtResource( 8 )]
-position = Vector2( 988, 317 )
+position = Vector2( 426, 170 )
