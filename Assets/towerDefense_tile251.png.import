@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/towerDefense_tile228.png-65d774b164b060e28e951fe70f3e2305.stex"
+path="res://.import/towerDefense_tile251.png-b9ee5d5842d929fb5ddff6265ca61572.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/adsf/PNG/Default size/towerDefense_tile228.png"
-dest_files=[ "res://.import/towerDefense_tile228.png-65d774b164b060e28e951fe70f3e2305.stex" ]
+source_file="res://Assets/towerDefense_tile251.png"
+dest_files=[ "res://.import/towerDefense_tile251.png-b9ee5d5842d929fb5ddff6265ca61572.stex" ]
 
 [params]
 
