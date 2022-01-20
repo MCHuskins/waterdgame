@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Assets/towerDefense_tile249.png" type="Texture" id=1]
 [ext_resource path="res://Assets/towerDefense_tile181.png" type="Texture" id=2]
-[ext_resource path="res://Rescources/fans/fan1.gd" type="Script" id=3]
+[ext_resource path="res://Rescources/fans/fant1.gd" type="Script" id=3]
 
 [node name="fan1" type="Node2D"]
 script = ExtResource( 3 )

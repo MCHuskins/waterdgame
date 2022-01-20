@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/Map 1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Ui/buttons/blue_button03.png" type="Texture" id=2]
 [ext_resource path="res://Assets/towerDefense_tile251.png" type="Texture" id=3]
 [ext_resource path="res://Assets/towerDefense_tile249.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/GameScene.gd" type="Script" id=5]
 
 [node name="GameScene" type="Node2D"]
+script = ExtResource( 5 )
 
 [node name="Map 1" parent="." instance=ExtResource( 1 )]
 
@@ -28,7 +30,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="gun" type="TextureButton" parent="UI/HUD/buildbar"]
+[node name="fan" type="TextureButton" parent="UI/HUD/buildbar" groups=["bb"]]
 margin_left = 10.0
 margin_right = 90.0
 margin_bottom = 80.0
@@ -38,7 +40,7 @@ size_flags_vertical = 4
 texture_normal = ExtResource( 2 )
 expand = true
 
-[node name="icon" type="TextureRect" parent="UI/HUD/buildbar/gun"]
+[node name="icon" type="TextureRect" parent="UI/HUD/buildbar/fan"]
 margin_right = 40.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 80, 80 )
@@ -49,7 +51,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="missles" type="TextureButton" parent="UI/HUD/buildbar"]
+[node name="missles" type="TextureButton" parent="UI/HUD/buildbar" groups=["bb"]]
 margin_left = 10.0
 margin_top = 90.0
 margin_right = 90.0
