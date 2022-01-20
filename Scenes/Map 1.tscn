@@ -154,7 +154,7 @@ tile_data = PoolIntArray( -131072, 0, 0, -131052, 0, 0, -65536, 0, 0, -65517, 0,
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="fan1" parent="Node2D" instance=ExtResource( 7 )]
-position = Vector2( 294, 213 )
+position = Vector2( 260, 228 )
 
 [node name="fan2" parent="Node2D" instance=ExtResource( 6 )]
 position = Vector2( 134, 163 )
