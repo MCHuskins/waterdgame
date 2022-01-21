@@ -9,13 +9,14 @@ script = ExtResource( 3 )
 
 [node name="bottom" type="Sprite" parent="."]
 texture = ExtResource( 1 )
+offset = Vector2( 32, 32 )
 
 [node name="top" type="Sprite" parent="."]
 texture = ExtResource( 2 )
-offset = Vector2( 10, 0 )
+offset = Vector2( 42, 32 )
 
 [node name="muzzel1" type="Position2D" parent="top"]
-position = Vector2( 41, 6 )
+position = Vector2( 73, 38 )
 
 [node name="muzzel2" type="Position2D" parent="top"]
-position = Vector2( 41, -6 )
+position = Vector2( 73, 26 )

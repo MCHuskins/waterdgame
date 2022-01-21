@@ -10,15 +10,17 @@ script = ExtResource( 4 )
 
 [node name="base" type="Sprite" parent="."]
 texture = ExtResource( 1 )
+offset = Vector2( 32, 32 )
 
 [node name="top" type="Sprite" parent="."]
 texture = ExtResource( 2 )
-offset = Vector2( 1, 0 )
+offset = Vector2( 33, 32 )
+flip_h = true
 
 [node name="Sprite" type="Sprite" parent="top"]
 texture = ExtResource( 3 )
-offset = Vector2( 5, -10 )
+offset = Vector2( 37, 22 )
 
 [node name="Sprite2" type="Sprite" parent="top"]
 texture = ExtResource( 3 )
-offset = Vector2( 5, 10 )
+offset = Vector2( 37, 42 )
