@@ -12,8 +12,8 @@ texture = ExtResource( 2 )
 offset = Vector2( 32, 32 )
 
 [node name="top" type="Sprite" parent="."]
+position = Vector2( 32, 32 )
 texture = ExtResource( 1 )
-offset = Vector2( 44, 32 )
 
 [node name="muzzle" type="Position2D" parent="top"]
-position = Vector2( 75, 32 )
+position = Vector2( 30, -1 )
