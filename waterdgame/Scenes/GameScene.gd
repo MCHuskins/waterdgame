@@ -14,7 +14,8 @@ func _ready():
 	map_node = get_node("Map 1")
 	for i in get_tree().get_nodes_in_group('bb'):
 		i.connect("pressed",self,"initiate_build_mode",[i.get_name()])
-		start_next_wave()
+
+
 func _process(delta):
 	if build_mode:
 		update_tower_preview()
