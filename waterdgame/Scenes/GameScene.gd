@@ -82,6 +82,7 @@ func verify_and_build():
 	if build_valid:
 		var new_tower = load("res://Rescources/fans/" + build_type + ".tscn").instance()
 		new_tower.position = build_location
+		new_tower.built
 		map_node.get_node("Towers").add_child(new_tower,true)
 		map_node.get_node("notower").set_cellv(build_tile,5)
 		
