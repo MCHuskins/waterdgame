@@ -7,7 +7,7 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 3.0
 
-[node name="fan1" type="Node2D"]
+[node name="fant1" type="Node2D"]
 script = ExtResource( 3 )
 
 [node name="base" type="Sprite" parent="."]
@@ -28,4 +28,4 @@ position = Vector2( 32, 32 )
 shape = SubResource( 1 )
 
 [connection signal="body_entered" from="range" to="." method="_on_range_body_entered"]
-[connection signal="body_shape_exited" from="range" to="." method="_on_range_body_shape_exited"]
+[connection signal="body_exited" from="range" to="." method="_on_range_body_exited"]

@@ -38,7 +38,7 @@ func start_next_wave():
 	spawn_enemies(wave_deta)
 	
 func retrieve_wave_deta():
-	var wave_delta = [["buletank", 0.7], ["buletank",0.1]]
+	var wave_delta = [["buletank", 3.7], ["buletank",0.1]]
 	current_wave += 1
 	enemies_in_wave = wave_delta.size()
 	return wave_delta
@@ -82,7 +82,8 @@ func verify_and_build():
 	if build_valid:
 		var new_tower = load("res://Rescources/fans/" + build_type + ".tscn").instance()
 		new_tower.position = build_location
-		new_tower.built
+		new_tower.built = true
+		new_tower.type = build_type
 		map_node.get_node("Towers").add_child(new_tower,true)
 		map_node.get_node("notower").set_cellv(build_tile,5)
 		

@@ -7,5 +7,3 @@
 script = ExtResource( 2 )
 
 [node name="MainMenu" parent="." instance=ExtResource( 1 )]
-
-[node name="at 9 in number 6" type="CollisionPolygon2D" parent="."]

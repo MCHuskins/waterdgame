@@ -1,11 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/towerDefense_tile181.png" type="Texture" id=1]
 [ext_resource path="res://Assets/towerDefense_tile228.png" type="Texture" id=2]
 [ext_resource path="res://Assets/towerDefense_tile251.png" type="Texture" id=3]
 [ext_resource path="res://Rescources/fans/fant3.gd" type="Script" id=4]
 
-[node name="fan1" type="Node2D"]
+[sub_resource type="CircleShape2D" id=1]
+radius = 3.0
+
+[node name="mist1" type="Node2D"]
 script = ExtResource( 4 )
 
 [node name="base" type="Sprite" parent="."]
@@ -24,3 +27,12 @@ texture = ExtResource( 3 )
 [node name="Sprite2" type="Sprite" parent="top"]
 position = Vector2( 0, 11 )
 texture = ExtResource( 3 )
+
+[node name="range" type="Area2D" parent="."]
+position = Vector2( 32, 32 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="range"]
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="range" to="." method="_on_range_body_entered"]
+[connection signal="body_exited" from="range" to="." method="_on_range_body_exited"]
