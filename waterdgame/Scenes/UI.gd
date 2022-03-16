@@ -1,7 +1,6 @@
 extends CanvasLayer
 var tower_range = 350
 
-
 func set_tower_preview(tower_type,mouse_position):
 	var drag_tower = load("res://Rescources/fans/" + tower_type + ".tscn").instance()
 	drag_tower.set_name("DragTower")
@@ -45,7 +44,7 @@ func _on_playpause_pressed():
 func _on_speedup_pressed():
 	if get_parent().build_mode:
 		get_parent().cancel_build_mode()
-	if Engine.get_time_scale()== 50.0:
+	if Engine.get_time_scale()== 3.0:
 		Engine.set_time_scale(1.0)
 	else:
-		Engine.set_time_scale(50.0)
+		Engine.set_time_scale(3.0)

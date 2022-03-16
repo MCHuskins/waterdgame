@@ -1,9 +1,12 @@
 extends PathFollow2D
 
+
 var speed = 140
 var hp = 50
+var base_damage = 21
 
 onready var healthbar = get_node("helth")
+
 
 func _ready():
 	healthbar.max_value = hp*2

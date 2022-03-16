@@ -2,6 +2,8 @@ extends Node2D
 
 var map_node
 
+# var money = 0
+
 var build_mode = false
 var build_valid = false
 var build_location
@@ -17,6 +19,7 @@ func _ready():
 
 
 func _process(delta):
+	# money += 1
 	if build_mode:
 		update_tower_preview()
 
