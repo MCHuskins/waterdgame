@@ -17,6 +17,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Gamedata="*res://Singletons/gamedata.gd"
+Playerstats="*res://Singletons/Pv.gd"
 
 [display]
 

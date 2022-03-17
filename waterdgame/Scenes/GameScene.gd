@@ -2,7 +2,9 @@ extends Node2D
 
 var map_node
 
-# var money = 0
+
+var mstr
+var pv
 
 var build_mode = false
 var build_valid = false
@@ -14,12 +16,16 @@ var enemies_in_wave
 
 func _ready():
 	map_node = get_node("Map 1")
+	mstr = get_node("UI/HUD/Infobar/h/money")
 	for i in get_tree().get_nodes_in_group('bb'):
 		i.connect("pressed",self,"initiate_build_mode",[i.get_name()])
 
 
+func _physics_process(delta):
+	mstr.text =str(Playerstats.money)
+
+
 func _process(delta):
-	# money += 1
 	if build_mode:
 		update_tower_preview()
 
@@ -64,9 +70,11 @@ func spawn_enemies(wave_delta):
 func initiate_build_mode(tower_type):
 	if build_mode:
 		cancel_build_mode()
-	build_type = tower_type + "t1"
-	build_mode = true
-	get_node("UI").set_tower_preview(build_type, get_global_mouse_position())
+	if Playerstats.money >= Gamedata.tower_data[tower_type + "t1"]["cost"]:
+		Playerstats.money -= Gamedata.tower_data[tower_type + "t1"]["cost"]
+		build_type = tower_type + "t1"
+		build_mode = true
+		get_node("UI").set_tower_preview(build_type, get_global_mouse_position())
 	
 func update_tower_preview():
 	var mouse_position = get_global_mouse_position()
