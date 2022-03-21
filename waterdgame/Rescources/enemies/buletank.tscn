@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Rescources/enemies/Water 2.png" type="Texture" id=1]
 [ext_resource path="res://Rescources/enemies/buletank.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Ui/buttons/blue_button05.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Ui/buttons/blue_button03.png" type="Texture" id=4]
+[ext_resource path="res://Rescources/enemies/tankdame.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 18, 18 )
@@ -17,6 +18,7 @@ script = ExtResource( 2 )
 [node name="Sprite" type="Sprite" parent="KinematicBody2D"]
 scale = Vector2( 0.15271, 0.14754 )
 texture = ExtResource( 1 )
+script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
 shape = SubResource( 1 )

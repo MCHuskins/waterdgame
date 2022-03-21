@@ -164,21 +164,19 @@ rect_min_size = Vector2( 59, 60 )
 texture = ExtResource( 11 )
 expand = true
 
-[node name="HP" type="TextureProgress" parent="UI/HUD/Infobar/h"]
+[node name="helth" type="TextureProgress" parent="UI/HUD/Infobar/h"]
 margin_left = 127.0
-margin_top = 5.0
-margin_right = 527.0
-margin_bottom = 55.0
-rect_min_size = Vector2( 400, 50 )
-size_flags_horizontal = 4
-size_flags_vertical = 4
-value = 50.0
+margin_right = 547.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 420, 0 )
 texture_under = ExtResource( 2 )
 texture_progress = ExtResource( 12 )
-tint_under = Color( 0, 0, 0, 1 )
+tint_under = Color( 0.290196, 0.152941, 0.152941, 0.0862745 )
+tint_progress = Color( 1, 0.00784314, 0.12549, 1 )
 nine_patch_stretch = true
-
-[node name="Tween" type="Tween" parent="UI/HUD/Infobar/h/HP"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Symblos" type="Label" parent="UI/HUD/Infobar/h"]
 margin_left = 960.0

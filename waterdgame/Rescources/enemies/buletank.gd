@@ -1,9 +1,9 @@
 extends PathFollow2D
 
 
-var speed = 140
+var speed = 70
 var hp = 50
-var base_damage = 21
+var end = 0
 
 onready var healthbar = get_node("helth")
 
@@ -14,7 +14,14 @@ func _ready():
 	healthbar.set_as_toplevel(true)
 
 func _physics_process(delta):
+	on_hit(get_node("KinematicBody2D/Sprite").dtt)
+	get_node("KinematicBody2D/Sprite").dtt = 0
 	move(delta)
+	if end == get_offset():
+		Playerstats.health -= int(hp/5)
+		on_destroy()
+	else:
+		end = get_offset()
 	
 func move(delta):
 	set_offset(get_offset()+speed*delta)

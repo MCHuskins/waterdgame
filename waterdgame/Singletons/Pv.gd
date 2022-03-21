@@ -1,2 +1,4 @@
 extends Node
-var money = 20
+var money = 0
+var clickdam = 20
+var health = 69
