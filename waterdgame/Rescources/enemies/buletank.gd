@@ -35,5 +35,8 @@ func on_hit(damage):
 		Playerstats.money += reward
 		on_destroy()
 
+
 func on_destroy():
+	Playerstats.enimes -= 1
+	print(Playerstats.enimes)
 	self.queue_free()

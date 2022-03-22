@@ -13,6 +13,7 @@ var build_type
 var build_tile
 var current_wave = 0
 var enemies_in_wave
+var can_stat = true
 
 func _ready():
 	map_node = get_node("Map 1")
@@ -23,6 +24,9 @@ func _ready():
 
 func _physics_process(delta):
 	mstr.text =str(Playerstats.money)
+	if Playerstats.enimes <= 0 and can_stat == true:
+		can_stat = false
+		start_next_wave()
 
 
 func _process(delta):
@@ -41,27 +45,36 @@ func _unhandled_input(event):
 ##wave thigns
 ##
 
+var waves = [
+	[["buletank", 1], ["buletank",1.1], ["buletank", 1.7], ["buletank", 1], ["buletank", 1.7],["buletank",1.1],["buletank",1.1]],
+[["wait", 5], ["buletank", 2.7], ["buletank", 1], ["buletank",1.1], ["buletank", 1.7], ["buletank", 1], ["buletank", 1.7],["buletank",1.1]]
+]
+
 func start_next_wave():
 	var wave_deta = retrieve_wave_deta()
 	yield(get_tree().create_timer(0.0),"timeout")
 	spawn_enemies(wave_deta)
 	
 func retrieve_wave_deta():
-	var wave_delta = [["buletank", 1.7], ["buletank",0.1], ["buletank", 2.7], ["buletank",0.1]]
-	for i in range(current_wave):
-		wave_delta.append(["buletank", 1.7])
-		wave_delta.append(["buletank",0.1])
+	var wave_delta = []
+	if current_wave <= waves.size()-1:
+		wave_delta = waves[current_wave]
+	else:
+		print("you win")
 	current_wave += 1
-	enemies_in_wave = wave_delta.size()
+	Playerstats.enimes = wave_delta.size()
+	can_stat = true
 	return wave_delta
 	
 func spawn_enemies(wave_delta):
 	for i in wave_delta:
-		var new_enemy = load("res://Rescources/enemies/" + i[0] + ".tscn").instance()
-		map_node.get_node("Path").add_child(new_enemy, true)
-		yield(get_tree().create_timer(i[1]),"timeout")
-	yield(get_tree().create_timer(1.0),"timeout")
-	start_next_wave()
+		if i[0] == "wait":
+			yield(get_tree().create_timer(i[1]),"timeout")
+		else:
+			var new_enemy = load("res://Rescources/enemies/" + i[0] + ".tscn").instance()
+			map_node.get_node("Path").add_child(new_enemy, true)
+			yield(get_tree().create_timer(i[1]),"timeout")
+
 
 
 ##
