@@ -48,10 +48,10 @@ func _on_playpause_pressed():
 func _on_speedup_pressed():
 	if get_parent().build_mode:
 		get_parent().cancel_build_mode()
-	if Engine.get_time_scale()== 4.2:
+	if Engine.get_time_scale()== 4:
 		Engine.set_time_scale(1.0)
 	else:
-		Engine.set_time_scale(4.2)
+		Engine.set_time_scale(4)
 
 func _physics_process(delta):
 	$HUD/Infobar/h/helth.value =  Playerstats.health*2

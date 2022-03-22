@@ -1,7 +1,7 @@
 extends Node
 var tower_data = {"fant1" : {
-	"damage" : 30,
-	"ref" : 1, 
+	"damage" : 10,
+	"ref" : 2, 
 	"range" : 350,
 	"cost":20}, 
 	"mist1" : {
