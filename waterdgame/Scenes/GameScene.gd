@@ -46,21 +46,25 @@ func _unhandled_input(event):
 ##
 
 var waves = [
-	[["buletank", 1], ["buletank",1.1], ["buletank", 1.7], ["buletank", 1], ["buletank", 1.7],["buletank",1.1],["buletank",1.1]],
-[["wait", 5], ["buletank", 2.7], ["buletank", 1], ["buletank",1.1], ["buletank", 1.7], ["buletank", 1], ["buletank", 1.7],["buletank",1.1]]
+	[["buletank", 1], ["buletank",1.1], ["buletank", 1.7], ["buletank", 1], ["buletank", 2.7], ["buletank", 1], ["buletank",1.1], ["buletank", 1.7], ["buletank", 1], ["buletank", 1.7],["buletank",1.1],["buletank",1.1]],
+[["wait", 3], ["buletank", 2.7], ["buletank", 1], ["buletank",1.1], ["buletank", 1.7],["buletank", 2.7], ["buletank", 1], ["buletank",1.1], ["buletank", 1.7], ["buletank", 1], ["buletank", 1], ["buletank", 1.7],["buletank",1.1]],
+[["wait", 3],["buletank", 1], ["buletank",1.1], ["buletank", 1.7], ["buletank", 1], ["buletank", 2.7], ["buletank", 1], ["buletank",1.1], ["buletank", 1.7], ["buletank", 1], ["buletank", 1.7],["buletank",1.1],["buletank",1.1]],
+[["wait", 3],["buletank", 1], ["buletank",1.1], ["buletank", 1.7], ["buletank", 1], ["buletank", 1.7],["buletank",1.1],["buletank",1.1]],
 ]
+
 
 func start_next_wave():
 	var wave_deta = retrieve_wave_deta()
 	yield(get_tree().create_timer(0.0),"timeout")
 	spawn_enemies(wave_deta)
+	howtoplay()
 	
 func retrieve_wave_deta():
 	var wave_delta = []
 	if current_wave <= waves.size()-1:
 		wave_delta = waves[current_wave]
 	else:
-		print("you win")
+		$UI/youwin.show()
 	current_wave += 1
 	Playerstats.enimes = wave_delta.size()
 	can_stat = true
@@ -69,14 +73,21 @@ func retrieve_wave_deta():
 func spawn_enemies(wave_delta):
 	for i in wave_delta:
 		if i[0] == "wait":
+			tellaboutnext()
 			yield(get_tree().create_timer(i[1]),"timeout")
+			Playerstats.enimes -= 1
 		else:
 			var new_enemy = load("res://Rescources/enemies/" + i[0] + ".tscn").instance()
 			map_node.get_node("Path").add_child(new_enemy, true)
 			yield(get_tree().create_timer(i[1]),"timeout")
 
-
-
+func howtoplay():
+	yield(get_tree().create_timer(9.0),"timeout")
+	$UI/clickwave.hide()
+func tellaboutnext():
+	$UI/nextwave.show()
+	yield(get_tree().create_timer(2.0),"timeout")
+	$UI/nextwave.hide()
 ##
 ## build thigns
 ##

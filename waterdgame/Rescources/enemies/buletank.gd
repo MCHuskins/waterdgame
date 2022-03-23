@@ -5,6 +5,7 @@ var speed = 70
 var hp = 50
 var end = 0
 var reward = 3
+var fuck = false
 
 onready var healthbar = get_node("helth")
 
@@ -37,6 +38,7 @@ func on_hit(damage):
 
 
 func on_destroy():
-	Playerstats.enimes -= 1
-	print(Playerstats.enimes)
+	if not fuck:
+		fuck = true
+		Playerstats.enimes -= 1
 	self.queue_free()

@@ -1,8 +1,9 @@
 extends CanvasLayer
 var tower_range = 350
-
+var heath
 func _ready():
-		$HUD/Infobar/h/helth.max_value =  Playerstats.health*2
+	heath = Playerstats.health*2
+	$HUD/Infobar/h/helth.max_value =  Playerstats.health*2
 
 
 func set_tower_preview(tower_type,mouse_position):
@@ -38,9 +39,6 @@ func _on_playpause_pressed():
 		get_parent().cancel_build_mode()
 	if get_tree().is_paused():
 		get_tree().paused = false
-	elif get_parent().current_wave == 0:
-		get_parent().current_wave += 1
-		get_parent().start_next_wave()
 	else:
 		get_tree().paused = true
 
@@ -54,6 +52,9 @@ func _on_speedup_pressed():
 		Engine.set_time_scale(4)
 
 func _physics_process(delta):
-	$HUD/Infobar/h/helth.value =  Playerstats.health*2
+	$HUD/Infobar/h/helth.value =  abs(heath -Playerstats.health*2)
 	if Playerstats.health <= 0:
+		get_tree().paused = true
+		$youlose.show()
+		yield(get_tree().create_timer(10.0),"timeout")
 		get_tree().quit()
