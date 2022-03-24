@@ -14,6 +14,7 @@ var build_tile
 var current_wave = 0
 var enemies_in_wave
 var can_stat = true
+var townshow = false
 
 func _ready():
 	map_node = get_node("Map 1")
@@ -27,7 +28,9 @@ func _physics_process(delta):
 	if Playerstats.enimes <= 0 and can_stat == true:
 		can_stat = false
 		start_next_wave()
-
+	if not townshow and Playerstats.money >= 20:
+		townshow = true
+		buytowerhelp()
 
 func _process(delta):
 	if build_mode:
@@ -40,6 +43,11 @@ func _unhandled_input(event):
 		verify_and_build()
 		cancel_build_mode()
 
+
+func buytowerhelp():
+	$UI/buyatower.show()
+	yield(get_tree().create_timer(5.0),"timeout")
+	$UI/buyatower.hide()
 
 ##
 ##wave thigns
