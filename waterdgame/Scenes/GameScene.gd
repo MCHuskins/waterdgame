@@ -39,6 +39,7 @@ func _process(delta):
 func _unhandled_input(event):
 	if event.is_action_released("ui_cancel") and build_mode == true:
 		cancel_build_mode()
+		Playerstats.money += 20
 	if event.is_action_released("ui_accept") and build_mode == true:
 		verify_and_build()
 		cancel_build_mode()
@@ -135,4 +136,6 @@ func verify_and_build():
 		new_tower.type = build_type
 		map_node.get_node("Towers").add_child(new_tower,true)
 		map_node.get_node("notower").set_cellv(build_tile,5)
+	else:
+		Playerstats.money += 20
 		

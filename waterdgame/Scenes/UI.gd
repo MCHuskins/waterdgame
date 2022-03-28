@@ -17,7 +17,6 @@ func set_tower_preview(tower_type,mouse_position):
 	range_texture.scale = Vector2(scaling,scaling)
 	var texture = load("res://Assets/range_overlay.png")
 	range_texture.texture = texture
-	range_texture.modulate = Color("ab54ff3c")
 	
 	var control = Control.new()
 	control.add_child(drag_tower, true)

@@ -183,7 +183,9 @@ offset = Vector2( 640, 360 )
 [node name="Towers" type="Node2D" parent="."]
 
 [node name="Path" type="Path2D" parent="."]
+self_modulate = Color( 0.501961, 0.6, 1, 0 )
 curve = SubResource( 3 )
 
 [node name="Path2D" type="Path2D" parent="."]
+self_modulate = Color( 0.501961, 0.6, 1, 0 )
 curve = SubResource( 4 )
