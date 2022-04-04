@@ -18,7 +18,7 @@ var townshow = false
 
 func _ready():
 	map_node = get_node("Map 1")
-	mstr = get_node("UI/HUD/Infobar/h/money")
+	mstr = get_node("UI/HUD/Infobar/money")
 	for i in get_tree().get_nodes_in_group('bb'):
 		i.connect("pressed",self,"initiate_build_mode",[i.get_name()])
 
@@ -74,6 +74,7 @@ func retrieve_wave_deta():
 		wave_delta = waves[current_wave]
 	else:
 		$UI/youwin.show()
+		$UI/restart.show()
 	current_wave += 1
 	Playerstats.enimes = wave_delta.size()
 	can_stat = true

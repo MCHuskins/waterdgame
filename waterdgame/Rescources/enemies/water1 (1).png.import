@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Backround-Final-.png-ba3dcb030b1f628e17e975075635b12b.stex"
+path="res://.import/water1 (1).png-acadfddafda57c31a2e157b06b634a9c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Backround-Final-.png"
-dest_files=[ "res://.import/Backround-Final-.png-ba3dcb030b1f628e17e975075635b12b.stex" ]
+source_file="res://Rescources/enemies/water1 (1).png"
+dest_files=[ "res://.import/water1 (1).png-acadfddafda57c31a2e157b06b634a9c.stex" ]
 
 [params]
 

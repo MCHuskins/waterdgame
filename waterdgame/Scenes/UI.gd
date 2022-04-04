@@ -55,5 +55,6 @@ func _physics_process(delta):
 	if Playerstats.health <= 0:
 		get_tree().paused = true
 		$youlose.show()
+		$restart.show()
 		yield(get_tree().create_timer(10.0),"timeout")
 		get_tree().quit()

@@ -24,6 +24,7 @@ func _physics_process(delta):
 		on_destroy()
 	else:
 		end = get_offset()
+	$KinematicBody2D/AnimationPlayer.play("walk")
 	
 func move(delta):
 	set_offset(get_offset()+speed*delta)
