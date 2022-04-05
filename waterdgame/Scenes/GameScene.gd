@@ -140,3 +140,10 @@ func verify_and_build():
 	else:
 		Playerstats.money += 20
 		
+
+
+func _on_restart_button_down():
+	Playerstats.restart = true
+	current_wave = 0
+	get_tree().paused = false
+

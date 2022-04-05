@@ -40,3 +40,14 @@ func _input(ev):
 			count +=1
 		elif count >= 1:
 			count = 0
+
+func _physics_process(delta):
+	if Playerstats.restart:
+		Playerstats.money =0
+		Playerstats.clickdam = 20
+		Playerstats.health = 69
+		Playerstats.enimes = 0
+		Playerstats.restart = false
+		get_node("GameScene").free()
+		var game_scence = load("res://Scenes/GameScene.tscn").instance()
+		add_child(game_scence)

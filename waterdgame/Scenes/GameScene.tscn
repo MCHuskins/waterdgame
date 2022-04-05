@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scenes/Map 1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Ui/buttons/blue_button03.png" type="Texture" id=2]
@@ -12,7 +12,6 @@
 [ext_resource path="res://Assets/fonts/Kenney Future Narrow.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://Assets/Floodlevel-3-.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Floodlevel-3- (1).png" type="Texture" id=12]
-[ext_resource path="res://Scenes/restart.gd" type="Script" id=13]
 [ext_resource path="res://Assets/Ui/buttons/blue_button05.png" type="Texture" id=14]
 
 [sub_resource type="DynamicFont" id=2]
@@ -345,6 +344,7 @@ __meta__ = {
 }
 
 [node name="restart" type="TextureButton" parent="UI"]
+pause_mode = 2
 visible = false
 margin_left = 434.0
 margin_top = 342.0
@@ -354,7 +354,6 @@ size_flags_horizontal = 4
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 14 )
 expand = true
-script = ExtResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -379,3 +378,4 @@ __meta__ = {
 
 [connection signal="pressed" from="UI/HUD/GameControls/playpause" to="UI" method="_on_playpause_pressed"]
 [connection signal="pressed" from="UI/HUD/GameControls/speedup" to="UI" method="_on_speedup_pressed"]
+[connection signal="button_down" from="UI/restart" to="." method="_on_restart_button_down"]
