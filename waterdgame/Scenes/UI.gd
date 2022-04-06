@@ -2,8 +2,8 @@ extends CanvasLayer
 var tower_range = 350
 var heath
 func _ready():
-	heath = Playerstats.health*2
-	$HUD/Infobar/h/helth.max_value =  Playerstats.health*2
+	heath = Playerstats.health
+	$HUD/Infobar/h/helth.max_value =  Playerstats.health
 
 
 func set_tower_preview(tower_type,mouse_position):
@@ -51,7 +51,7 @@ func _on_speedup_pressed():
 		Engine.set_time_scale(4)
 
 func _physics_process(delta):
-	$HUD/Infobar/h/helth.value =  abs(heath -Playerstats.health*2)
+	$HUD/Infobar/h/helth.value =  abs(heath -Playerstats.health)
 	if Playerstats.health <= 0:
 		get_tree().paused = true
 		$youlose.show()

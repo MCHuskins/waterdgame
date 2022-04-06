@@ -45,7 +45,7 @@ func _physics_process(delta):
 	if Playerstats.restart:
 		Playerstats.money =0
 		Playerstats.clickdam = 20
-		Playerstats.health = 69
+		Playerstats.health = 7
 		Playerstats.enimes = 0
 		Playerstats.restart = false
 		get_node("GameScene").free()

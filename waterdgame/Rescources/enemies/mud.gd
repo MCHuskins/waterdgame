@@ -1,10 +1,10 @@
 extends PathFollow2D
 
 
-var speed = 70
-var hp = 50
+var speed = 50
+var hp = 120
 var end = 0
-var reward = 3
+var reward = 6
 var fuck = false
 
 onready var healthbar = get_node("helth")

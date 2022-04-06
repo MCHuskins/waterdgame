@@ -1,8 +1,8 @@
 extends PathFollow2D
 
 
-var speed = 70
-var hp = 50
+var speed = 50
+var hp = 500
 var end = 0
 var reward = 3
 var fuck = false

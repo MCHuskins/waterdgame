@@ -1,8 +1,6 @@
 extends Node2D
 
 var map_node
-
-
 var mstr
 var pv
 
@@ -55,10 +53,10 @@ func buytowerhelp():
 ##
 
 var waves = [
-	[["buletank", 1], ["buletank",1.1], ["buletank", 1.7], ["buletank", 1], ["buletank", 2.7], ["buletank", 1], ["buletank",1.1], ["buletank", 1.7], ["buletank", 1], ["buletank", 1.7],["buletank",1.1],["buletank",1.1]],
-[["wait", 3], ["buletank", 2.7], ["buletank", 1], ["buletank",1.1], ["buletank", 1.7],["buletank", 2.7], ["buletank", 1], ["buletank",1.1], ["buletank", 1.7], ["buletank", 1], ["buletank", 1], ["buletank", 1.7],["buletank",1.1]],
-[["wait", 3],["buletank", 1], ["buletank",1.1], ["buletank", 1.7], ["buletank", 1], ["buletank", 2.7], ["buletank", 1], ["buletank",1.1], ["buletank", 1.7], ["buletank", 1], ["buletank", 1.7],["buletank",1.1],["buletank",1.1]],
-[["wait", 3],["buletank", 1], ["buletank",1.1], ["buletank", 1.7], ["buletank", 1], ["buletank", 1.7],["buletank",1.1],["buletank",1.1]],
+	[["mud", 1], ["buletank",1.1], ["mud", 1], ["buletank", 1.7], ["mud", 1], ["buletank", 1], ["mud", 1], ["buletank", 2.7], ["buletank", 1],["mud", 1], ["buletank",1.1], ["buletank", 1.7], ["mud", 1], ["buletank", 1], ["buletank", 1.7],["buletank",1.1],["boss",1.1]],
+[["wait", 3], ["buletank", 2.7], ["mud", 1],["buletank", 1], ["mud", 1],["buletank",1.1], ["buletank", 1.7],["mud", 1],["buletank", 2.7], ["buletank", 1], ["mud", 1], ["buletank",1.1], ["buletank", 1.7], ["buletank", 1], ["buletank", 1],["mud", 1], ["boss", 1.7],["boss",1.1]],
+[["wait", 3],["buletank", 1], ["mud", 1], ["buletank",1.1], ["mud", 1], ["buletank", 1.7], ["buletank", 1], ["buletank", 2.7], ["buletank", 1],["mud", 1], ["buletank",1.1], ["mud", 1], ["buletank", 1.7], ["buletank", 1], ["boss", 1.7],["boss",1.1],["boss",1.1]],
+[["wait", 3],["buletank", 1], ["mud", 1], ["buletank",1.1], ["buletank", 1.7], ["boss", 1], ["boss", 1], ["boss", 1.7],["boss",1.1], ["boss", 1], ["boss",1.1]],
 ]
 
 
@@ -86,6 +84,10 @@ func spawn_enemies(wave_delta):
 			tellaboutnext()
 			yield(get_tree().create_timer(i[1]),"timeout")
 			Playerstats.enimes -= 1
+		elif rand_range(0,4) > 2:
+			var new_enemy = load("res://Rescources/enemies/" + i[0] + ".tscn").instance()
+			map_node.get_node("Path2D").add_child(new_enemy, true)
+			yield(get_tree().create_timer(i[1]),"timeout")
 		else:
 			var new_enemy = load("res://Rescources/enemies/" + i[0] + ".tscn").instance()
 			map_node.get_node("Path").add_child(new_enemy, true)
