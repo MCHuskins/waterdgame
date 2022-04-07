@@ -106,9 +106,9 @@ func tellaboutnext():
 func initiate_build_mode(tower_type):
 	if build_mode:
 		cancel_build_mode()
-	if Playerstats.money >= Gamedata.tower_data[tower_type + "t1"]["cost"]:
-		Playerstats.money -= Gamedata.tower_data[tower_type + "t1"]["cost"]
-		build_type = tower_type + "t1"
+	if Playerstats.money >= Gamedata.tower_data[tower_type]["cost"]:
+		Playerstats.money -= Gamedata.tower_data[tower_type]["cost"]
+		build_type = tower_type
 		build_mode = true
 		get_node("UI").set_tower_preview(build_type, get_global_mouse_position())
 	

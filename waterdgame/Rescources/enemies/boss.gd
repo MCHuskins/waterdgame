@@ -4,7 +4,7 @@ extends PathFollow2D
 var speed = 50
 var hp = 500
 var end = 0
-var reward = 3
+var reward = 15
 var fuck = false
 
 onready var healthbar = get_node("helth")
@@ -34,6 +34,7 @@ func on_hit(damage):
 	hp -= damage
 	healthbar.value = hp *2
 	if hp <= 0:
+		Playerstats.score += 5
 		Playerstats.money += reward
 		on_destroy()
 

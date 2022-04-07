@@ -48,6 +48,7 @@ func _physics_process(delta):
 		Playerstats.health = 7
 		Playerstats.enimes = 0
 		Playerstats.restart = false
+		Playerstats.score = 0
 		get_node("GameScene").free()
 		var game_scence = load("res://Scenes/GameScene.tscn").instance()
 		add_child(game_scence)

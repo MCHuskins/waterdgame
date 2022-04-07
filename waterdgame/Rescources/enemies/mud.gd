@@ -35,6 +35,7 @@ func on_hit(damage):
 	healthbar.value = hp *2
 	if hp <= 0:
 		Playerstats.money += reward
+		Playerstats.score += 2
 		on_destroy()
 
 

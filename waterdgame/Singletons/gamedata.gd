@@ -1,12 +1,14 @@
 extends Node
-var tower_data = {"fant1" : {
-	"damage" : 10,
-	"ref" : 2, 
+var tower_data = {"fan1" : {
+	"damage" : 30,
+	"ref" : 1, 
 	"range" : 350,
 	"cost":20}, 
-	"mist1" : {
-		"damage" : 100,
-		"ref" : 4, 
-		"range" : 555,
-		"cost":20}
+
+	"fan2" : {
+	"damage" : 80,
+	"ref" : 2, 
+	"range" : 350,
+	"cost":35}	
 	}
+

@@ -7,6 +7,13 @@ var end = 0
 var reward = 3
 var fuck = false
 
+
+var pipe = preload("res://Rescources/damge.tscn")
+
+func spawnPipe():
+	var pipeInst = pipe.instance()
+	add_child(pipeInst)
+	
 onready var healthbar = get_node("helth")
 
 
@@ -33,7 +40,10 @@ func move(delta):
 func on_hit(damage):
 	hp -= damage
 	healthbar.value = hp *2
+#	if hp >= 40:
+#		spawnPipe()
 	if hp <= 0:
+		Playerstats.score += 1
 		Playerstats.money += reward
 		on_destroy()
 
