@@ -58,7 +58,8 @@ var waves = [
 [["wait", 3],["buletank", 1], ["mud", 1], ["buletank",1.1], ["mud", 1], ["buletank", 1.7], ["buletank", 1], ["buletank", 2.7], ["buletank", 1],["mud", 1], ["buletank",1.1], ["mud", 1], ["buletank", 1.7], ["buletank", 1], ["boss", 1.7],["boss",1.1],["boss",1.1]],
 [["wait", 3],["buletank", 1], ["mud", 1], ["buletank",1.1], ["buletank", 1.7], ["boss", 1], ["boss", 1], ["boss", 1.7],["boss",1.1], ["boss", 1], ["boss",1.1]],
 ]
-
+#
+#var waves = [[["buletank",1.1]]]
 
 func start_next_wave():
 	var wave_deta = retrieve_wave_deta()

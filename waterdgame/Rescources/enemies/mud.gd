@@ -25,7 +25,11 @@ func _physics_process(delta):
 	else:
 		end = get_offset()
 	$KinematicBody2D/AnimationPlayer.play("walk")
-	
+var pipe = preload("res://Rescources/damge.tscn")
+
+func spanwdame():
+	var pipeInst = pipe.instance()
+	add_child(pipeInst)
 func move(delta):
 	set_offset(get_offset()+speed*delta)
 	healthbar.set_position(position - Vector2(30,30))
@@ -33,9 +37,13 @@ func move(delta):
 func on_hit(damage):
 	hp -= damage
 	healthbar.value = hp *2
+	Playerstats.score += 1
+	if damage >= 3:
+#		print(str(Playerstats.score) + "," + str(damage))
+		spanwdame()
 	if hp <= 0:
+		Playerstats.score += 1
 		Playerstats.money += reward
-		Playerstats.score += 2
 		on_destroy()
 
 
