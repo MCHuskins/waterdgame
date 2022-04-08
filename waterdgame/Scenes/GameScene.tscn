@@ -6,9 +6,9 @@
 [ext_resource path="res://Assets/junk/fand.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/GameScene.gd" type="Script" id=5]
 [ext_resource path="res://Scenes/UI.gd" type="Script" id=6]
-[ext_resource path="res://Assets/Ui/pause.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Ui/play.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Ui/fastForward.png" type="Texture" id=9]
+[ext_resource path="res://Scenes/start.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/stop.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/New Piskel (7).png" type="Texture" id=9]
 [ext_resource path="res://Assets/fonts/Kenney Future Narrow.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://Assets/junk/Floodlevel-3-.png" type="Texture" id=11]
 [ext_resource path="res://Assets/junk/Floodlevel-3- (1).png" type="Texture" id=12]
@@ -149,36 +149,47 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -164.0
-margin_top = -90.0
-margin_right = -20.0
-margin_bottom = -20.0
+margin_left = -899.0
+margin_top = -79.0
+margin_right = -661.0
+margin_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="speedup2" type="Sprite" parent="UI/HUD/GameControls"]
+position = Vector2( 181, 40 )
+scale = Vector2( 0.740132, 0.84375 )
+texture = ExtResource( 9 )
+hframes = 3
+
 [node name="playpause" type="TextureButton" parent="UI/HUD/GameControls"]
 pause_mode = 2
-margin_right = 70.0
+margin_top = 10.0
+margin_right = 120.0
 margin_bottom = 70.0
-rect_min_size = Vector2( 70, 70 )
+rect_min_size = Vector2( 120, 60 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
 toggle_mode = true
 texture_normal = ExtResource( 8 )
 texture_pressed = ExtResource( 7 )
 expand = true
+stretch_mode = 4
 
 [node name="speedup" type="TextureButton" parent="UI/HUD/GameControls"]
 pause_mode = 2
-margin_left = 74.0
-margin_right = 144.0
-margin_bottom = 70.0
-rect_min_size = Vector2( 70, 70 )
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 124.0
+margin_top = 5.0
+margin_right = 244.0
+margin_bottom = 74.0
+rect_min_size = Vector2( 120, 69 )
+rect_pivot_offset = Vector2( -158, 18 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture_normal = ExtResource( 9 )
-texture_pressed = ExtResource( 9 )
+texture_normal = ExtResource( 8 )
 expand = true
 
 [node name="Infobar" type="ColorRect" parent="UI/HUD"]

@@ -1,5 +1,5 @@
 extends Node
-var money =30
+var money = 0
 var clickdam = 20
 var health = 7
 var enimes = 0
