@@ -47,13 +47,14 @@ func _on_speedup_pressed():
 	if get_parent().build_mode:
 		get_parent().cancel_build_mode()
 	if Engine.get_time_scale()== 5:
-#		$UI/HUD/GameControls/speedup2.
 		Engine.set_time_scale(1.0)
+		Playerstats.speed = 0
 	elif Engine.get_time_scale()== 3:
 		Engine.set_time_scale(5)
+		Playerstats.speed = 2
 	else:
 		Engine.set_time_scale(3)
-		
+		Playerstats.speed = 1
 
 func _physics_process(delta):
 	$HUD/Infobar/h/helth.value =  abs(heath -Playerstats.health)
