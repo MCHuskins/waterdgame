@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bakcgound.png-7b3cf031e7a1f6ab55d5e23ce71013c2.stex"
+path="res://.import/backgound.png-d4754feb63913d23bd103b1455a4c27d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/junk/bakcgound.png"
-dest_files=[ "res://.import/bakcgound.png-7b3cf031e7a1f6ab55d5e23ce71013c2.stex" ]
+source_file="res://Assets/junk/backgound.png"
+dest_files=[ "res://.import/backgound.png-d4754feb63913d23bd103b1455a4c27d.stex" ]
 
 [params]
 

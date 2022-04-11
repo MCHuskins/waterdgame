@@ -2,6 +2,7 @@ extends Node2D
 
 var map_node
 var mstr
+var mst3
 var pv
 
 var build_mode = false
@@ -17,12 +18,14 @@ var townshow = false
 func _ready():
 	map_node = get_node("Map 1")
 	mstr = get_node("UI/HUD/Infobar/money")
+	mst3 = get_node("UI/HUD/Infobar/score")
 	for i in get_tree().get_nodes_in_group('bb'):
 		i.connect("pressed",self,"initiate_build_mode",[i.get_name()])
 
 
 func _physics_process(delta):
 	mstr.text =str(Playerstats.money)
+	mst3.text = str(Playerstats.score)
 	if Playerstats.enimes <= 0 and can_stat == true:
 		can_stat = false
 		start_next_wave()

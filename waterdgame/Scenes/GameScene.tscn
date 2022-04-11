@@ -130,7 +130,7 @@ __meta__ = {
 [node name="pies" type="Label" parent="UI/HUD/buildbar/fan2"]
 margin_left = -3.0
 margin_top = 29.0
-margin_right = 39.0
+margin_right = 27.0
 margin_bottom = 89.0
 rect_min_size = Vector2( 20, 60 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
@@ -205,10 +205,28 @@ __meta__ = {
 }
 
 [node name="money" type="Label" parent="UI/HUD/Infobar"]
-margin_left = 1212.0
-margin_top = 96.0
+margin_left = 1195.0
+margin_top = 81.0
 margin_right = 1275.0
 margin_bottom = 156.0
+rect_min_size = Vector2( 20, 60 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 1
+custom_constants/shadow_as_outline = 1
+custom_fonts/font = SubResource( 2 )
+text = "999"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="score" type="Label" parent="UI/HUD/Infobar"]
+margin_left = 1182.0
+margin_top = 162.0
+margin_right = 1262.0
+margin_bottom = 237.0
 rect_min_size = Vector2( 20, 60 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 2
@@ -225,16 +243,17 @@ __meta__ = {
 [node name="h" type="HBoxContainer" parent="UI/HUD/Infobar"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 8.0
-margin_right = -111.0
-margin_bottom = -16.0
+margin_left = 11.0
+margin_top = -2.0
+margin_right = 38.0
+margin_bottom = -6.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Control2" type="Control" parent="UI/HUD/Infobar/h"]
 margin_right = 60.0
-margin_bottom = 63.0
+margin_bottom = 83.0
 rect_min_size = Vector2( 60, 0 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -243,14 +262,14 @@ __meta__ = {
 [node name="TextureRect" type="TextureRect" parent="UI/HUD/Infobar/h"]
 margin_left = 64.0
 margin_right = 190.0
-margin_bottom = 63.0
+margin_bottom = 83.0
 rect_min_size = Vector2( 126, 60 )
 expand = true
 
 [node name="helth" type="TextureProgress" parent="UI/HUD/Infobar/h"]
 margin_left = 194.0
 margin_right = 454.0
-margin_bottom = 63.0
+margin_bottom = 83.0
 rect_min_size = Vector2( 260, 0 )
 texture_under = ExtResource( 12 )
 texture_over = ExtResource( 12 )
@@ -262,10 +281,10 @@ __meta__ = {
 
 [node name="Symblos" type="Label" parent="UI/HUD/Infobar/h"]
 visible = false
-margin_left = 1160.0
-margin_top = 13.0
-margin_right = 1280.0
-margin_bottom = 73.0
+margin_left = 1049.0
+margin_top = 1.0
+margin_right = 1169.0
+margin_bottom = 61.0
 rect_min_size = Vector2( 120, 60 )
 size_flags_horizontal = 10
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )

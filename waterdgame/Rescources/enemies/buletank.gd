@@ -40,7 +40,6 @@ func move(delta):
 func on_hit(damage):
 	hp -= damage
 	healthbar.value = hp *2
-	Playerstats.score += 1
 	if damage >= 3:
 #		print(str(Playerstats.score) + "," + str(damage))
 		spanwdame()

@@ -30,6 +30,7 @@ window/stretch/aspect="keep"
 [global]
 
 path=false
+singl=false
 
 [input]
 

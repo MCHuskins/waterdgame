@@ -8,7 +8,7 @@ var tower_data = {"fan1" : {
 	"fan2" : {
 	"damage" : 80,
 	"ref" : 2, 
-	"range" : 350,
+	"range" : 250,
 	"cost":35}	
 	}
 
