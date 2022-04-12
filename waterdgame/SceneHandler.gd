@@ -2,8 +2,8 @@ extends Node
 var count = 0
 
 func _ready():
-	get_node("MainMenu/m/vb/Newgame").connect("pressed",self,"on_new_game_pressed")
-	get_node("MainMenu/m/vb/quit").connect("pressed",self,"on_quit_pressed")
+	get_node("MainMenu/Newgame").connect("pressed",self,"on_new_game_pressed")
+	get_node("MainMenu/quit").connect("pressed",self,"on_quit_pressed")
 	
 func on_quit_pressed():
 	get_tree().quit()
